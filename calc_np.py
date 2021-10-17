@@ -7,6 +7,11 @@ class DevNumpy():
 
     def distance_pt_pts(self, p, points):
         
+        """
+        Point = [x, y]
+        Points = [[xa, ya], [xb, yb], ...]
+        """
+
         p_np = np.array(p, np.float64)
         points_np = np.array(points, np.float64)
         
@@ -54,6 +59,18 @@ class DevNumpy():
         return d
 
 
+    def distance_circle_points(self, center, r, points):
+        """
+        Center = [x, y]
+        Radius = r
+        Points = [[xa, ya], [xb, yb], ...]
+        """
+
+        r_np = np.array(r)
+
+        d = self.distance_pt_pts(center, points) - r_np
+        print(d)
+
 
 
 dv = DevNumpy()
@@ -91,4 +108,21 @@ c = [5.1, 2]
 d = [-3.3, 10]
 
 dd = dv.distance_pt_pts(a, [b, c, d])
+# print(dd)
+
+
+################################################################
+
+
+### Test : Point-Points with Numpy
+
+a = [-4, 2]
+b = [3, 5]
+c = [5.1, 2]
+d = [-3.3, 10]
+r = 1.23
+
+dd = dv.distance_pt_pts(a, r, [b, c, d])
 print(dd)
+
+
