@@ -5,7 +5,23 @@ import numpy as np
 class DevNumpy():
 
 
-    def line_pts_points_2d_np(self, p0, p1, points):
+    def distance_pt_pts(self, p, points):
+        
+        p_np = np.array(p, np.float64)
+        points_np = np.array(points, np.float64)
+        
+        ### Define Vector2pt
+        u = points_np - p_np
+        # print(u)
+
+        ### Get VectorSize ()= Distance)
+        d = np.linalg.norm(u, axis=1)
+        # print(d)
+
+        return d
+
+
+    def distance_line_pts_points_2d_np(self, p0, p1, points):
         
         """
         Distance (line (p0 to p1) - points)
@@ -38,6 +54,8 @@ class DevNumpy():
         return d
 
 
+
+
 dv = DevNumpy()
 
 
@@ -55,11 +73,22 @@ e = [3.9, 4]
 # a = np.array(a)
 # print(a)
 
-dd = dv.line_pts_points_2d_np(a, b, [c])
-print(dd)
+dd = dv.distance_line_pts_points_2d_np(a, b, [c])
+# print(dd)
 
-dd = dv.line_pts_points_2d_np(a, b, [c, d, e])
-print(dd)
+dd = dv.distance_line_pts_points_2d_np(a, b, [c, d, e])
+# print(dd)
 
 
 ################################################################
+
+
+### Test : Point-Points with Numpy
+
+a = [-4, 2]
+b = [3, 5]
+c = [5.1, 2]
+d = [-3.3, 10]
+
+dd = dv.distance_pt_pts(a, [b, c, d])
+print(dd)
