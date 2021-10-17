@@ -36,6 +36,7 @@ class Dev():
 
         ds = []
         for point in points:
+            # print(point)
             d = self.line_pts_point_2d(p0, p1, point)
             ds.append(d)
 
@@ -45,19 +46,29 @@ class Dev():
 
 
 
+
+dv = Dev()
+
+
+################################################################
+
+
+### Test : Line-Points
+
 a = [-4, 2]
 b = [3, 5]
 c = [5.1, 2]
 d = [-3.3, 10]
 e = [3.9, 4]
 
+dd =  dv.line_pts_point_2d(a, b, c)
+print(dd)
 
-dv = Dev()
+dd = dv.line_pts_points_2d(a, b, [c])
+print(dd)
+
+dd = dv.line_pts_points_2d(a, b, [c, d, e])
+print(dd)
 
 
-d =  dv.line_pts_point_2d(a, b, c)
-print(d)
-
-d = dv.line_pts_points_2d(a, b, [c, d, e])
-print(d)
-
+################################################################
