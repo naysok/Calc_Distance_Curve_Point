@@ -19,6 +19,8 @@ GhPython の中で使うことも考え、Numpy 無し/有りで実装し始め�
 
 直線と点に比べて難しそうだと思っていたが、絵を書いていたら簡単に解けたので感動してしまった。2点間の距離計算で ok。  
 
+2点間の距離計算は、平方根で実装しがちだが（？）、2点を始点と終点に据えたベクトルに置き換えてそのベクトルの大きさをとればスマート。  
+
 ![circle-point](_images/circle_point_1.png)  
 
 
@@ -38,3 +40,11 @@ GhPython の中で使うことも考え、Numpy 無し/有りで実装し始め�
 
 線分と頂点の最短距離（実装メモ (Python)）  
   [https://tjkendev.github.io/procon-library/python/geometry/segment_line_point_distance.html](https://tjkendev.github.io/procon-library/python/geometry/segment_line_point_distance.html)  
+
+
+NumPyのデータ型dtype一覧とastypeによる変換（キャスト）（note.nkmk.me）  
+  [https://note.nkmk.me/python-numpy-dtype-astype/](https://note.nkmk.me/python-numpy-dtype-astype/)  
+
+
+【python】 Numpyで2点間の距離と角度を求める（Kaggle Note）  
+  [https://kagglenote.com/ml-tips/between-two-points/](https://kagglenote.com/ml-tips/between-two-points/)  
